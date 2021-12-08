@@ -1,0 +1,14 @@
+node_modules
+coverage
+docker
+*.log
+.git
+.gitignore
+build/*
+Dockerfile
+node_modules
+coverage
+npm-debug.log*
+README.d
+docker-compose.yml
+docker-compose.override.yml

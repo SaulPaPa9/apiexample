@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  postsapi:
+    build: .
+    environment:
+      DB_USER: "saulpa"
+      DB_PASSWORD: "r0tr0ta"
+      DB_HOST: "mongodb"
+      DB_NAME: "cleanappdb"
+    depends_on:
+      - mongodb
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/usr/src/
+      - /usr/src/node_modules
+    command: npx nodemon --legacy-watch /src/index.js
+  mongodb:
+    image: mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: saulpa
+      MONGO_INITDB_ROOT_PASSWORD: r0tr0ta
+      # uncomment to expose port to host machine and give access to mongo compass
+    ports:
+      - "27017:27017"      
+    volumes:
+      - ./docker/mongodb_data:/data/db
+      - ./docker/docker-entrypoint-initdb.d/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro    

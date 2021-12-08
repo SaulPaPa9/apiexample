@@ -1,0 +1,154 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "This is a simple microservice api to serve posts purchases and sales actions requested from 'Cleanapp' mobile application  focused on control inventory of grooming products",
+    "version": "1.0.0",
+    "title": "Cleanapp",
+    "contact": {
+      "email": "partidapadilla.saul@gmail.com"
+    },
+    "license": {
+      "url": "http://www.gnu.org/licenses/#GPL",
+      "name": "GNU"
+    }
+  },
+  "host": "cleanapp",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "purchases",
+      "description": "Endpoint destinated to register purchases"
+    },
+    {
+      "name": "sales",
+      "description": "Endpoint destinated to register sales"
+    }
+  ],
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/register-purchases": {
+      "post": {
+        "tags": [
+          "purchases"
+        ],
+        "summary": "Register a purchase",
+        "description": "",
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Register a purchase",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Purchase"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/Purchase"
+            }
+          },
+          "400": {
+            "description": "Invalid purchase"
+          }
+        }
+      }
+    },
+    "/register-sales": {
+      "post": {
+        "tags": [
+          "sales"
+        ],
+        "summary": "Register a sale",
+        "description": "",
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Register a sale",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Sale"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/Sale"
+            }
+          },
+          "400": {
+            "description": "Invalid sale"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Purchase": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "idProduct": {
+          "type": "string"
+        },
+        "productName": {
+          "type": "string"
+        },
+        "quantity": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "date": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "xml": {
+        "name": "Purchase"
+      }
+    },
+    "Sale": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "idProduct": {
+          "type": "string"
+        },
+        "productName": {
+          "type": "string"
+        },
+        "quantity": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "date": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "xml": {
+        "name": "Sale"
+      }
+    }
+  }
+}

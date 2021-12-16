@@ -46,6 +46,7 @@ This app uses the following key technologies:
 - [Mongoose.js](https://mongoosejs.com/)
 - [Jest](https://jestjs.io/)
 - [Docker](https://docs.docker.com/)
+- [Swagger](https://swagger.io/)
 
 
 ## Setup
@@ -56,9 +57,8 @@ npm install
 ```
 
 Install Mongo Compass (optional) https://www.mongodb.com/try/download/compass
-
 Install and run Docker (example whit version for windows) https://docs.docker.com/desktop/windows/install/
-
+Install Thunder Client extension to VSC and import thunder-collection_CleanAppThunderCollection.json file
 
 ## Usage
 
@@ -81,4 +81,9 @@ Acces to running app container and Run the tests.
 ```shell script
 docker exec -it cleanapp_postsapi_1 bash
 npm run test-coverage
+```
+
+Acces to Swagger documentation.
+```shell script
+http://localhost:3000/docs
 ```

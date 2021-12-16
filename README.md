@@ -57,8 +57,8 @@ npm install
 ```
 
 Install Mongo Compass (optional) https://www.mongodb.com/try/download/compass
-Install and run Docker (example whit version for windows) https://docs.docker.com/desktop/windows/install/
-Install Thunder Client extension to VSC and import thunder-collection_CleanAppThunderCollection.json file
+<br>Install and run Docker (example whit version for windows) https://docs.docker.com/desktop/windows/install/
+<br>Install Thunder Client extension to VSC and import thunder-collection_CleanAppThunderCollection.json file
 
 ## Usage
 

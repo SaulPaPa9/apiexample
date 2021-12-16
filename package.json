@@ -9,7 +9,8 @@
     "dev-posts": "nodemon src/Microservices/Posts/index.js",
     "devs": "npm run dev && npm run dev-posts",
     "test": "jest --env=node --detectOpenHandles",
-    "test-coverage": "jest --env=node --detectOpenHandles --coverage"
+    "test-coverage": "jest --env=node --detectOpenHandles --coverage",
+    "lint": "eslint ."
   },
   "keywords": [
     "cleanapp",

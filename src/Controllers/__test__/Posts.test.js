@@ -81,7 +81,7 @@ describe("test suite", () => {
         let purchases = await Purchases.find({ product: product._id, quantityToSale: { $gt: 0 } })        
         .sort("date");
 
-        console.log("Pur", purchases);
+        //console.log("Pur", purchases);
 
         const response = await supertest(testServer).post("/register-sales").send({
             "id": "s012",
@@ -91,7 +91,7 @@ describe("test suite", () => {
             "productName": "TestProduct"
         });
 
-        console.log("Body", response.body);
+       // console.log("Body", response.body);
 
         expect(response.status).toBe(200);
         expect(response.body.message).toBe("Sale stored successfully");
@@ -108,7 +108,7 @@ describe("test suite", () => {
             "productName": "TestProduct"
         });
 
-        console.log("Body 2", response.body);
+        //console.log("Body 2", response.body);
 
         expect(response.status).toBe(500);
         expect(response.body.message).toBe("You can only sale 25 TestProduct tp1");

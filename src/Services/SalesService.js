@@ -62,7 +62,7 @@ class SalesService {
               id: sale.idPurchase,
               date: sale.date,
               quantity: sale.quantity,
-              id: product.idProduct,
+              productId: product.idProduct,
               productName: product.name
             };
 

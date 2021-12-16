@@ -3,7 +3,6 @@ const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('../Config/swagger.json');
 const purchasesController = require("../Controllers/PurchasesController");
 const salesController = require("../Controllers/SalesController");
-const productsController = require("../Controllers/ProductsController");
 const router = express.Router();
 
 //app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));

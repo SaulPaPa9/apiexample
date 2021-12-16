@@ -43,7 +43,7 @@ class MongooseDriver {
             }
         }
         return this.mongoose;
-    };
+    }
 
 
     static GetClassModel(classSchema, classType) {
